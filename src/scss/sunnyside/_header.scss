@@ -8,13 +8,13 @@
 
         img {
             @include m.tablet-xl { 
-                width: 15rem;
+                width: 17rem;
             }
         }
     }
 
     &__nav {
-        padding: 2.5rem 0;
+        padding: 3.5rem 0;
         margin: 0 auto;
         display: flex;
         align-items: center;

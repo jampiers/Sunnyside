@@ -2,7 +2,7 @@
 @use 'base/mixins' as m;
 
 .footer {
-    padding: 4rem 0;
+    padding: 7rem 0;
     background-color: hsl(168, 57%, 72%);
 
     &__contenido {
@@ -12,18 +12,20 @@
     }
 
     &__logo {
-        margin-bottom: 2.5rem;
-    }
+        margin-bottom: 4.5rem;
 
-    &__logo svg path {
-        fill: #2C7566;
+        img {
+            @include m.tablet-xl { 
+                width: 17rem;
+            }
+        }
     }
 
     &__nav {
         display: flex;
         align-items: center;
-        gap: 2rem;
-        margin-bottom: 5rem;
+        gap: 4rem;
+        margin-bottom: 9rem;
     }
 
     &__enlace {
@@ -37,7 +39,7 @@
     &__ul {
         display: flex;
         align-items: center;
-        gap: 2rem;
+        gap: 2.5rem;
     }
 
     &__redes-logo {
