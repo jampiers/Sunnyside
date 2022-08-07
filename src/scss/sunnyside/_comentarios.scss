@@ -1,0 +1,68 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.testimoniales {
+    padding: 7.5rem 0;
+
+    @include m.desktop { 
+        padding: 15.5rem 0;
+    }
+
+    h4 {
+        text-align: center;
+    }
+
+    &__contenido {
+        @include m.grid(1, 6rem);
+
+        @include m.tablet { 
+            @include m.grid(3, 2rem);
+            align-items: center;
+        }
+    }
+}
+
+.comentario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3rem;
+
+    @include m.telefono { 
+        max-width: 36rem;
+        margin: 0 auto;
+    }
+
+    @include m.tablet-xl { 
+        max-width: 35rem;
+    }
+
+    &__imagen {
+        width: 7rem;
+        height: 7rem;
+        border-radius: 50%;
+    }
+
+    &__texto {
+        color: v.$verydarkgrayishblue;
+
+        @include m.tablet { 
+            font-size: 1.4rem;
+        }
+
+        @include m.tablet-xl { 
+            font-size: 1.8rem;
+        }
+    }
+
+    h5 {
+        span {
+            margin-top: 1.5rem;
+            color: v.$grayishblue;
+            font-size: 1.5rem;
+            display: block;
+            font-family: v.$fontPrimary;
+        }
+    }
+}

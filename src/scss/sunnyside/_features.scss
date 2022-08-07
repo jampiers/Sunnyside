@@ -1,0 +1,103 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.features {
+
+    &__contenido {
+        display: flex;
+        flex-direction: column-reverse;
+
+        @include m.tablet { 
+            @include m.grid(2, 0rem);
+            align-items:center;
+        }
+
+        &:nth-child(2) .features__learn {
+            @include m.btnLearn(v.$verydarkdesaturatedblue, v.$softred);
+
+            &::before {
+                background-color: lighten(v.$softred, 20%);
+            }
+        }
+
+        &:nth-child(1) .features__imagen-c {
+            @include m.tablet { 
+                grid-row: 1 / 2;
+                grid-column: 2 / 3;
+
+            }
+        }
+
+        &:nth-child(2) .features__imagen-c {
+            @include m.tablet {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+            }
+        }
+
+        &:nth-child(2) .features__info {
+            @include m.tablet {
+                grid-column: 2 / 3;
+            }
+        }
+    }
+
+    &__info {
+        padding: 5.5rem 0;
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+
+        @include m.telefono { 
+            padding: 8rem 0;
+        }
+
+        @include m.tablet { 
+            padding: 0;
+            text-align: left;
+            max-width: 30rem;
+        }
+
+        @include m.tablet-xl { 
+            max-width: 35rem;
+        }
+
+        @include m.desktop { 
+            max-width: 45rem;
+        }
+    }
+
+    &__learn {
+        @include m.btnLearn(v.$verydarkdesaturatedblue, v.$yellow);
+    }
+
+    &__picture-m {
+        @include m.tablet { 
+            display: none;   
+        }
+    }
+
+    &__imagen-m {
+        width: 100%;
+        height: auto;
+
+        @include m.tablet { 
+            display: none;
+        }
+    }
+
+    &__imagen-t {
+        display: none;
+
+        @include m.tablet { 
+            display: block;  
+            width: 100%;
+            height: 40rem;
+            object-fit: cover;
+        }
+
+        @include m.tablet-xl { 
+            height: auto;
+        }
+    }
+}

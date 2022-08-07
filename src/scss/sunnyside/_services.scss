@@ -1,0 +1,78 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.services {
+
+    &__contenido {
+        @include m.tablet { 
+            @include m.grid(2, 0rem);
+            align-items: center;   
+        }
+    }
+    
+}
+
+.service {
+    position: relative;
+
+    &:nth-child(2) &__info * {
+        color: v.$darkblue;
+    }
+
+    &__info {
+        position: absolute;
+        bottom: 6rem;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        width: 85%;
+
+        @include m.telefono { 
+            bottom: 10rem;
+            width: 70%;
+        }
+
+        @include m.tablet { 
+            bottom: 1.5rem;
+            width: 100%;
+            max-width: 30rem;
+        }
+
+        @include m.tablet-xl { 
+            max-width: 35rem;
+            bottom: 3rem;
+        }
+
+        @include m.desktop { 
+            bottom: 5.5rem;
+        }
+    }
+
+    &__texto {
+        font-size: 1.4rem;
+        color: v.$darkdesaturatedcyan;
+
+        @include m.tablet-xl { 
+            font-size: 1.6rem;
+        }
+    }
+
+    &__imagen-m {
+        width: 100%;
+        height: auto;
+
+        @include m.tablet { 
+            display: none;
+        }
+    }
+
+    &__imagen-t {
+        display: none;
+
+        @include m.tablet { 
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+} 
